@@ -661,43 +661,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	 </div>
        </div>
      </div>
-   </div>
-
-	<div class="col s12 m10">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="ISS image" src="/assets/img/iss_pic.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Video Summarizer<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  World's first nanopore-only metagenome-assembled genome from an ISS sample.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <div
-			<script src="https://cdn.biojs.net/genomediagram/latest/genomediagram.js"></script>
-		</div>
-		<div id="genome-diagram"></div>
-	<script>
-  	// Replace 'your-json-data.json' with the actual path to your JSON file
-  	fetch('/assets/c_acnes.json')
-   	 .then(response => response.json())
-   	 .then(data => {
-   	   const container = document.getElementById('genome-diagram');
-  	    const gd = new GenomeDiagram({ element: container });
-  	    gd.loadJSON(data);
- 	     gd.render();
- 	   })
- 	   .catch(error => {
- 	     console.error('Error loading JSON:', error);
-	    });
-	</script>
-                </div>
-              </div>
-          </div>
-
-	    
+   </div>    
  </section>
 
     <!-- Ninth Section: Contact -->
