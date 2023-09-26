@@ -679,20 +679,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<script src="https://cdn.biojs.net/genomediagram/latest/genomediagram.js"></script>
 		</div>
 		<div id="genome-diagram"></div>
-		<script>
-  // Replace 'your-json-data.json' with the actual path to your JSON file
-  fetch('/assets/c_acnes.json')
-    .then(response => response.json())
-    .then(data => {
-      const container = document.getElementById('genome-diagram');
-      const gd = new GenomeDiagram({ element: container });
-      gd.loadJSON(data);
-      gd.render();
-    })
-    .catch(error => {
-      console.error('Error loading JSON:', error);
-    });
-</script>
+	<script>
+  	// Replace 'your-json-data.json' with the actual path to your JSON file
+  	fetch('/assets/c_acnes.json')
+   	 .then(response => response.json())
+   	 .then(data => {
+   	   const container = document.getElementById('genome-diagram');
+  	    const gd = new GenomeDiagram({ element: container });
+  	    gd.loadJSON(data);
+ 	     gd.render();
+ 	   })
+ 	   .catch(error => {
+ 	     console.error('Error loading JSON:', error);
+	    });
+	</script>
                 </div>
               </div>
           </div>
