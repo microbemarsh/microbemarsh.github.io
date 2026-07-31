@@ -5,7 +5,7 @@ shortBio: "Wet-lab scientist bridging microbiology and computer science through 
 institution: "University of Florida"
 ---
 
-I am a research assistant professor at UF focused on defining relationships between microbial communities, their environments, and their hosts. My work bridges **wet-lab microbiology**, **long-read sequencing**, and **computational biology**.
+I am a research assistant professor at the [University of Florida Emerging Pathogens Institute](https://epi.ufl.edu/) and am associated with the [Spatial Epidemiology & Ecology Research Laboratory (SEER Lab)](https://seerlab.geog.ufl.edu/). I focus on defining relationships between microbial communities, their environments, and their hosts. My work bridges **wet-lab microbiology**, **long-read sequencing**, and **computational biology**.
 
 My doctoral research centered on environmental microbiome characterization, including low-biomass bioaerosols and spatial patterns in the St. Lawrence River. More recently, I have studied connections between the Bacillus anthracis and its geospatial distribution as well as gut microbiome and neurological conditions all using culture-independent workflows.
 

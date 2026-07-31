@@ -24,8 +24,77 @@ const { Content: BioContent } = bioEntry
 				</header>
 			)
 		}
+		<aside class="affiliation-card" aria-labelledby="current-affiliation">
+			<a
+				class="affiliation-logo"
+				href="https://epi.ufl.edu/"
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="Visit the University of Florida Emerging Pathogens Institute"
+			>
+				<img
+					src="/assets/img/uf-epi-logo.png"
+					alt="University of Florida Emerging Pathogens Institute"
+					width="4266"
+					height="856"
+				/>
+			</a>
+			<div class="affiliation-copy">
+				<p class="affiliation-label" id="current-affiliation">Current affiliation</p>
+				<p>
+					Research Assistant Professor at the
+					<a href="https://epi.ufl.edu/" target="_blank" rel="noopener noreferrer">
+						UF Emerging Pathogens Institute
+					</a>,
+					associated with the
+					<a href="https://seerlab.geog.ufl.edu/" target="_blank" rel="noopener noreferrer">
+						Spatial Epidemiology &amp; Ecology Research Laboratory (SEER Lab)
+					</a>.
+				</p>
+			</div>
+		</aside>
 		<div class="prose">
 			{BioContent ? <BioContent /> : <p>Loading bio...</p>}
 		</div>
 	</div>
 </BaseLayout>
+
+<style>
+	.affiliation-card {
+		display: grid;
+		gap: 1rem;
+		margin-bottom: 2rem;
+		padding: 1.25rem;
+		border: 1px solid var(--border);
+		border-radius: 0.5rem;
+		background: var(--surface);
+	}
+
+	.affiliation-logo {
+		display: block;
+		max-width: 32rem;
+		padding: 0.75rem;
+		border-radius: 0.35rem;
+		background: #fff;
+	}
+
+	.affiliation-logo img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	.affiliation-copy p {
+		margin: 0;
+	}
+
+	.affiliation-label {
+		margin-bottom: 0.35rem !important;
+		font-family: "JetBrains Mono", monospace;
+		font-size: 0.75rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--accent);
+	}
+</style>
