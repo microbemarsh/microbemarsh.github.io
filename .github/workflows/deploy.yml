@@ -3,12 +3,18 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main, master ]
+  schedule:
+    - cron: "17 10 * * 1"
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -16,7 +22,32 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-      
+
+      - name: Set up Node for ORCID sync
+        if: github.event_name != 'push'
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Synchronize publications from ORCID
+        if: github.event_name != 'push'
+        env:
+          ORCID_ID: "0000-0001-5749-1558"
+        run: npm run sync:publications
+
+      - name: Commit synchronized publications
+        if: github.event_name != 'push'
+        run: |
+          git add -A -- ':(glob)src/content/publications/orcid-*.md'
+          if git diff --cached --quiet; then
+            echo "ORCID publications are already current."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore: sync publications from ORCID"
+            git push origin "HEAD:${{ github.event.repository.default_branch }}"
+          fi
+
       - name: Install, build, and upload
         uses: withastro/action@v6
         with:
