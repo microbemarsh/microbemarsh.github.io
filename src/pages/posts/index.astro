@@ -1,0 +1,18 @@
+---
+import { getCollection } from "astro:content";
+import BaseListing from "../../layouts/BaseListing.astro";
+import { PAGES } from "../../config";
+
+if (PAGES.blog.isActive === false) {
+    return Astro.redirect("/404");
+}
+
+const posts = (await getCollection("posts")).filter((post) => !post.data.draft);
+---
+
+<BaseListing
+    collection="posts"
+    title={PAGES.blog.title}
+    subtitle={PAGES.blog.subtitle}
+    entries={posts}
+/>
