@@ -8,7 +8,7 @@ Create a file such as `src/content/posts/my-first-post.md`:
 
 ```md
 ---
-title: "Post title"
+title: "Hello world"
 date: "2026-08-15"
 description: "A one-sentence summary."
 author: "Austin Marshall"
@@ -17,7 +17,7 @@ tags:
   - "Nanopore"
 ---
 
-Write the post here using ordinary Markdown.
+Eventually I'll add some writing here
 ```
 
 ## Add other content
